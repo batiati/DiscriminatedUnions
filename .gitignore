@@ -1,0 +1,6 @@
+.vscode/**
+src/.vs/**
+src/Tests/obj/**
+src/Tests/bin/**
+src/DiscriminatedUnions/obj/**
+src/DiscriminatedUnions/bin/**

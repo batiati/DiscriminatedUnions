@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>System</RootNamespace>
+    <Version>0.9.0</Version>
+    <Authors>Rafael Batiati</Authors>
+    <Company />
+    <Description>A simple, no-overhead, value-type wrapper around object to mimic Algebraic Data Types on C# (Something like TypeScript's discriminated unions, Rust's enum, etc)</Description>
+    <Copyright>Unlicense</Copyright>
+    <PackageLicenseExpression>https://unlicense.org/</PackageLicenseExpression>
+    <PackageTags>C# DiscriminatedUnion Algebraic</PackageTags>
+    <RepositoryUrl>https://github.com/batiati/AlgebraicDataTypes</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
