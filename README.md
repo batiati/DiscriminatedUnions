@@ -120,6 +120,16 @@ void DeleteUser(int id)
 }
 ```
 
+## TODO List
+
+- Add serialization support
+
+- Add support for 3 or more generic types
+
+- Add nullable annotations
+
+- Publish nuget package
+
 
 
 
