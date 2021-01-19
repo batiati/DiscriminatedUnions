@@ -1,7 +1,15 @@
-﻿using System;
-
-namespace System
+﻿namespace System
 {
+	#region Documentation
+
+	/// <summary>
+	/// Represents a discriminated union of two possible values
+	/// </summary>
+	/// <typeparam name="T1">First type</typeparam>
+	/// <typeparam name="T2">Second type</typeparam>
+
+	#endregion Documentation
+
 	public struct OneOf<T1, T2> : IEquatable<OneOf<T1, T2>>
 	{
 		#region Fields
@@ -12,11 +20,30 @@ namespace System
 
 		#region Properties
 
+		#region Documentation
+
+		/// <summary>
+		/// Returns the underlying value
+		/// </summary>
+
+		#endregion Documentation
+
 		public object Value => value;
+
+		#region Documentation
+
+		/// <summary>
+		/// Gets a value indicating whether the current has a valid value of its underlying type or if it is null.
+		/// </summary>
+
+		#endregion Documentation
+
+		public bool HasValue => value != null;
 
 		#endregion Properties
 
 		#region Constructors
+
 		public OneOf(T1 value)
 		{
 			this.value = value;
@@ -70,6 +97,19 @@ namespace System
 		public override int GetHashCode()
 		{
 			return value?.GetHashCode() ?? 0;
+		}
+
+		#region Documentation
+		
+		/// <summary>
+		/// Returns the text representation of the value of the current underlying value or and empty string ("") if the OneOf.HasValue property is false.
+		/// </summary>
+		
+		#endregion Documentation
+		
+		public override string ToString()
+		{
+			return value?.ToString() ?? string.Empty;
 		}
 
 		public static implicit operator T1(OneOf<T1, T2> union)

@@ -3,6 +3,13 @@ using NUnit.Framework;
 
 namespace Tests
 {
+	class User
+	{
+		public int ID { get; set; }
+
+		public string Name { get; set; }
+	}
+
 	public class Tests
 	{
 		[Test]
@@ -157,6 +164,12 @@ namespace Tests
 			Assert.AreEqual(ret4, "1010");
 		}
 
-
+		[Test]
+		public void NullValueTest()
+		{
+			var value = new OneOf<string, User>((string)null);
+			Assert.IsFalse(value.TryGet(out string str));
+			Assert.IsFalse(value.TryGet(out User user));
+		}
 	}
 }
