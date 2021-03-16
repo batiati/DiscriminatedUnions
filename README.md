@@ -8,7 +8,7 @@ Algebraic data types are powerful concepts that help to design cleaner interface
 
 For example:
 
-```
+```c#
 //Some business object
 public class User { ... }
 
@@ -19,7 +19,7 @@ public enum Error
   NotFound
 }
 
-static OneOf<User,Error> GetUser(int id)
+static OneOf<User, Error> GetUser(int id)
 {
     if (id == 0) return Error.InvalidId;
     var user = FetchFromDatabase(id);
@@ -68,7 +68,7 @@ So, in some scenarios, it could be necessary to use the raw `Value` property dir
 
 For example, the same thing can be written this way:
 
-```
+```c#
 void DeleteUser(OneOf<int, User> user)
 {
     int id;
@@ -91,7 +91,7 @@ void DeleteUser(OneOf<int, User> user)
 
 Or this way:
 
-```
+```c#
 void DeleteUser(OneOf<int, User> user)
 {
     var id = user.Value switch
@@ -107,7 +107,7 @@ void DeleteUser(OneOf<int, User> user)
 
 Or whitout `OneOf<>`:
 
-```
+```c#
 void DeleteUser(User user)
 {
     if (user == null) throw new NullReferenceException();
